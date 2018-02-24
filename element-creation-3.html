@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>
+      Element create and Add
+    </title>
+  </head>
+  <body>
+    <span>
+      Demonstrating <br />
+      innerHTML, innerText, outerHTML, outerText, textContent properties <br />
+      insertAdjacentHTML() method
+    </span>
+    <div id="A"></div>
+    <div id="B"></div>
+    <div id="C"></div>
+    <div id="D"></div>
+    <div id="E"></div>
+    <span id="F"></span>
+    <script type="text/javascript">
+      console.log('Logging first document.body.innerHTML \n', document.body.innerHTML);
+      document.getElementById('A').innerHTML = '<strong>Hi Folks</strong>';
+      document.getElementById('B').outerHTML = '<span>Changing to span</span>';
+      document.getElementById('C').textContent = 'adding text to div C';
+      document.getElementById('D').innerText = 'inner text to D'
+      document.getElementById('E').outerText = 'outer text to E';
+      document.getElementById('F').insertAdjacentHTML('beforebegin', '<div>Empty div </div>');
+      document.getElementById('F').insertAdjacentHTML('afterbegin', '<i>Hi </i>');
+      document.getElementById('F').insertAdjacentHTML('beforeEnd', '<b>folks </b>');
+      document.getElementById('F').insertAdjacentHTML('afterEnd', '<div>Empty div</div>');
+      console.log('Logging document.body.innerHTML \n', document.body.innerHTML);
+    </script>
+  </body>
+</html>
