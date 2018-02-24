@@ -6,10 +6,21 @@
     </title>
   </head>
   <body>
+    <!-- This is a comment yo -->
+    <div></div>
+    <span>Hello</span>
     <script type="text/javascript">
       console.log(Node);
       for (var key in Node) {
         console.log('key - ', key, 'value - ', Node[key]);
+      }
+      var divElement = document.querySelector('div');
+      console.log('nodeType - ', divElement.nodeType, 'nodeName - ', divElement.nodeName, 'nodeValue - ', divElement.nodeValue);
+      var spanElement = document.querySelector('span');
+      console.log('nodeType - ', spanElement.nodeType, 'nodeName - ', spanElement.nodeName, 'nodeValue - ', spanElement.nodeValue);
+      var elements = document.querySelectorAll('*');
+      for (var i = 0; i < elements.length; i = i + 1) {
+        console.log('nodeType - ', elements[i].nodeType, 'nodeName - ', elements[i].nodeName, 'nodeValue - ', elements[i].nodeValue);
       }
     </script>
   </body>
