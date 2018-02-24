@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>
+    cloneNode
+  </title>
+</head>
+
+<body>
+  <ul>
+    <li>
+      One
+    </li>
+    <li>
+      Two
+    </li>
+  </ul>
+
+  <ul>
+    <li>
+      cloneNode with true copies inner nodes as well
+    </li>
+    <li>
+      cloneNode may lead to duplicate ids in a document
+    </li>
+    <li>
+      cloneNode copies attributes and its values as well but event handlers will be lost
+    </li>
+  </ul>
+  <script>
+    var element = document.querySelector('ul');
+    cloneA = element.cloneNode();
+    console.log(cloneA.constructor);
+    console.log(cloneA.innerHTML);
+
+    cloneB = element.cloneNode(true);
+    console.log(cloneB.constructor);
+    console.log(cloneB.innerHTML);
+
+    console.log('isEqualNode cloneA = cloneB', cloneA.isEqualNode(cloneB));
+    console.log(document.body.innerHTML);
+  </script>
+</body>
+
+</html>

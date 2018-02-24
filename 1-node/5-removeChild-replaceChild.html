@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>
+    removeChild and replaceChild
+  </title>
+</head>
+
+<body>
+  <span>Must get parent Node of item to be removed or replaced</span>
+  <br />
+  <div id="A">Hi</div>
+  <div id="B">Folks</div>
+
+  <div>
+    Both replaceChild() and removeChild() return the replaced or remove node.<br />
+    Basically its not gone just because you replace it or remove.<br />
+    All this does is takes it out of the current live document.<br />
+    You still have a reference to it in memory.<br />
+  </div>
+  <script>
+    console.log(document.body.innerHTML);
+
+    var spanElement = document.createElement('span');
+    var textNode = document.createTextNode('Howdy');
+    spanElement.appendChild(textNode);
+
+    var bElement = document.getElementById('B');
+    bElement.parentNode.removeChild(bElement);
+
+    var aElement = document.getElementById('A');
+    aElement.parentNode.replaceChild(spanElement, aElement);
+
+    console.log(document.body.innerHTML);
+  </script>
+</body>
+
+</html>

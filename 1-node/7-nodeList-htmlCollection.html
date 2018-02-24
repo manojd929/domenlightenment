@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>
+      NodeList and HTML Collections
+    </title>
+  </head>
+  <body>
+    <ul>
+      <li>
+        When we select nodes, The Nodes are placed in either NodeList or HTML collections(document.scripts)
+      </li>
+      <li>
+        These are array like object collections
+      </li>
+      <li>
+        These are either live or static (snapshot of live document)
+      </li>
+    </ul>
+    <script>
+      var nodes = document.querySelector('ul').childNodes;
+      console.log(nodes);
+
+      Array.prototype.forEach.call(nodes, function(node) {
+        console.log(node);
+      });
+    </script>
+  </body>
+</html>

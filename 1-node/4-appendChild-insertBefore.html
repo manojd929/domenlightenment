@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>
+    appendChild and insertBefore
+  </title>
+</head>
+
+<body>
+  <ul>
+    <li>
+      two
+    </li>
+    <li>
+      three
+    </li>
+  </ul>
+  <script>
+    console.log(document.body.innerHTML);
+
+    var textNode = document.createTextNode('one');
+    var liElement = document.createElement('li');
+    liElement.appendChild(textNode);
+
+    var ul = document.querySelector('ul');
+    ul.insertBefore(liElement, ul.firstChild);
+    
+    console.log(document.body.innerHTML);  
+  </script>
+</body>
+
+</html>
