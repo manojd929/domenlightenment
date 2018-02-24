@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Document Node</title>
+</head>
+
+<body>
+  <ul>
+    <li>Starting point of DOM interface - window.document</li>
+    <li>Both Document and HTMLDocument constructors are typically instantiated by the browser when you load an HTML document</li>
+    <li>With document.implementation.createHTMLDocument()
+        <br /> its possible to create your own HTML document outside of the one currently loaded into the browser
+    </li>
+  </ul>
+  <script type="text/javascript">
+    console.log(window.document.constructor); // HTMLDocument
+    console.log(window.document.nodeName); // document
+
+    var d = document;
+    console.log('title = ' + d.title);
+    console.log('url = ' + d.URL);
+    console.log('referrer = ' + d.referrer);
+    console.log('lastModified = ' + d.lastModified);
+    console.log('head = ', + d.head);
+    console.log('body = ', + d.body);
+
+    //logs either BackCompat (Quirks Mode) or CSS1Compat (Strict Mode)
+    console.log('compatibility mode = ' + d.compatMode);
+
+    console.log('document childNodes ', document.childNodes); // DOCTYPE and html
+  </script>
+</body>
+
+</html>

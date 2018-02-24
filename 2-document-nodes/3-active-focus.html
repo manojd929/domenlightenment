@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Active Focus Nodes</title>
+</head>
+
+<body>
+  <textarea name="address" id="" cols="30" rows="10"></textarea>
+  <div>
+    <ul>
+      <li>
+          Using the document.hasFocus() method
+      </li>
+      <li>
+        It is possible to know whether the user has focused on the window that has the html document loaded
+      </li>
+    </ul>
+  </div>
+  <script type="text/javascript">
+    var element = document.querySelector('textarea');
+    element.focus();
+    console.log(document.hasFocus()); // true
+
+    console.log('activeElement ', document.activeElement);
+  </script>
+</body>
+
+</html>
