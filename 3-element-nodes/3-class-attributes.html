@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>
+    class Attributes
+  </title>
+</head>
+
+<body>
+  <div class="big brown bear">
+    classList is read-only but can be modifyied using the add(), remove(), contains(), and toggle() methods
+  </div>
+  <script type="text/javascript">
+    var divElement = document.querySelector('div');
+    console.log('classList - ', divElement.classList);
+    console.log('className - ', divElement.className);
+    console.log('adding classNames using classList.add ');
+    console.log('removing classNames using classList.add ');
+    divElement.classList.add('add1');
+    divElement.classList.remove('big');
+
+    console.log('toggling - brown to grow');
+    divElement.classList.toggle('brown');
+    divElement.classList.toggle('grow');
+
+    console.log('contains() ', divElement.classList.contains('add1'));
+    console.log('className - ', divElement.className);
+  </script>
+</body>
+
+</html>

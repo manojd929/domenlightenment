@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Noteworthy properties</title>
+</head>
+
+<body>
+  <p>Hello</p>
+  <div>Each element in the dom is constructed using unique JS interface or constructor</div>
+
+  <div>
+    <b>Notable Properties and Methods</b>
+  </div>
+  <div>Related to Attirbutes</div>
+  <ul>
+    <li>attributes</li>
+    <li>getAttribute</li>
+    <li>setAttribute</li>
+    <li>hasAttribute</li>
+    <li>removeAttribute</li>
+  </ul>
+  <div>Others</div>
+  <ul>
+    <li>children</li>
+    <li>classList</li>
+    <li>tagName</li>
+    <li>dataset</li>
+  </ul>
+  <script type="text/javascript">
+    var pElement = document.querySelector('p');
+    console.log('constructor ', pElement.constructor);
+    console.log('tagName ', pElement.tagName); // logs always in CAPS
+    console.log(typeof pElement, pElement);
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Attribute Properties</title>
+</head>
+
+<body>
+  <a href='#' title="title" data-foo="dataFoo" style="margin:0;" class="yes" foo="boo" />
+  <script type="text/javascript">
+    var aElement = document.querySelector('a');
+    var attributes = aElement.attributes;
+    console.log('before ', attributes);
+
+    aElement.removeAttribute('title');
+    aElement.removeAttribute('data-foo');
+
+    aElement.setAttribute('attr1', 'attr1Value');
+    aElement.setAttribute('attr2', 'attr2Value');
+    aElement.setAttribute('hidden', 'hidden');
+
+    console.log('getting style attribute using getAttribute ', aElement.getAttribute('style'));
+    console.log('after ', attributes);
+
+    console.log('hasAttribute - class', aElement.hasAttribute('class'));
+
+    console.log(document.body.innerHTML);
+  </script>
+</body>
+
+</html>
