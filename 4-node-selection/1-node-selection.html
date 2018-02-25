@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>
+    Node Selection
+  </title>
+</head>
+
+<body>
+  <ul>
+    <li>querySelector() will return the first node element found in the document based on the selector.</li>
+    <li class="what">what</li>
+    <li>is</li>
+    <li id="last">going on</li>
+  </ul>
+  <div>The lists are static not live</div>
+
+  <hr />
+  <div>contexual selector</div>
+  <div>div.querySelector('*') div.querySelectorAll('*')</div>
+  <hr />
+  <div>Preconfigured selection of nodes</div>
+  <table>
+    <tr>
+      <td>document.links</td>
+    </tr>
+    <tr>
+      <td>document.images</td>
+    </tr>
+    <tr>
+      <td>document.styleSheets</td>
+    </tr>
+    <tr>
+      <td>document.scripts</td>
+    </tr>
+    <tr>
+      <td>document.forms</td>
+    </tr>
+    <tr>
+      <td>document.all</td>
+    </tr>
+  </table>
+  <hr />
+  <div>Mathches Selector - matchesSelector('li:first-child')</div>
+  <script type="text/javascript">
+    console.log(document.querySelector('li').textContent);
+    console.log(document.getElementById('last').textContent);
+
+
+    console.log(document.querySelectorAll('li'));
+    console.log(document.getElementsByTagName('li'));
+    console.log(document.getElementsByClassName('what'));
+
+    var ulElement = document.querySelector('ul').children;
+    console.log('ul children', ulElement);
+  </script>
+</body>
+
+</html>
