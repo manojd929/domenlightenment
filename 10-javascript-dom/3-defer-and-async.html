@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Defer and async</title>
+</head>
+
+<body>
+  <div>
+    <\script> element has an attribute called defer that will defer the blocking, downloading, and executing of an external JavaScript
+      file until the browser has parsed the closing
+      <\html> node
+  </div>
+  <div>
+    <p>
+      The
+      <\script> element has an attribute called async that will override the sequential blocking nature of
+        <\script> elements when the DOM is being constructed by a web browser. By using this attribute, we are telling the browser
+          not to block the construction (i.e. DOM parsing, including downloading other assets e.g. images, style sheets,
+          etc...) of the html page and forgo the the sequential loading as well.
+    </p>
+  </div>
+  <!-- Don't block, just start downloading and then parse the file when it's done downloading -->
+  <script async src="http://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.3.3/underscore-min.js"></script>
+
+  <!-- defer, don't block just ignore this until the <html> element node is parsed -->
+  <script defer src="http://cdnjs.cloudflare.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+
+  <!-- defer, don't block just ignore this until the <html> element node is parsed -->
+  <script defer src="http://cdnjs.cloudflare.com/ajax/libs/jquery-mousewheel/3.0.6/jquery.mousewheel.min.js"></script>
+
+  <script>
+    //We know that jQuery is not avaliable because this occurs before the closing <html> element
+    console.log(window['jQuery'] === undefined); //logs true
+
+    //Only after everything is loaded can we safley conclude that jQuery was loaded and parsed
+    document.body.onload = function () { console.log(jQuery().jquery) }; //logs function
+  </script>
+</body>
+
+</html>

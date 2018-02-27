@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Synchronous parsing</title>
+</head>
+
+<body>
+  <div>
+    <ul>
+      <li>
+        when the DOM is being parsed and it encounters a
+        <\script> element it will stop parsing the document, blocks any further rendering
+      </li>
+      <li>
+        downloads and exectue the JavaScript.
+      </li>
+    </ul>
+  </div>
+  <!-- stop document parsing, block document parsing, load js, exectue js, then resume document parsing... -->
+  <script src="http://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.3.3/underscore-min.js"></script>
+
+  <!-- stop document parsing, block document parsing, exectue js, then resume document parsing... -->
+  <script>console.log('hi');</script>
+
+</body>
+
+</html>

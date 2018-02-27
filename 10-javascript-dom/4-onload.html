@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>onload</title>
+</head>
+
+<body>
+  <p>
+    script element supports a load event handler (ie. onload) that will execute once an external JavaScript file has been loaded
+    and executed.
+    In the code below I leverage the onload event to create a callback programatically notifying us when the
+    JavaScript file has been downloaded and exectued.
+  </p>
+  <!-- Don't block, just start downloading and then parse the file when it's done downloading -->
+  <script>
+    var underscoreScript = document.createElement("script");
+    underscoreScript.src = "http://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.3.3/underscore-min.js";
+    underscoreScript.onload = function () { console.log('underscsore is loaded and exectuted'); };
+    document.body.appendChild(underscoreScript);
+  </script>
+
+  <!-- Don't block, just start downloading and then parse the file when it's done downloading -->
+  <script async src="http://cdnjs.cloudflare.com/ajax/libs/jquery/1.7.2/jquery.min.js" onload="console.log('jQuery is loaded and exectuted');"></script>
+
+</body>
+
+</html>
