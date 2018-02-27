@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>createDocumentFragment</title>
+</head>
+
+<body>
+  <ul>
+    <li>
+      Document Fragment node provides lightweight document DOM that is external to live DOM tree
+    </li>
+    <li>
+      It onlu lives in memory
+    </li>
+    <li>
+      Its child nodes can easily be manipulated in memory and then appended to live DOM
+    </li>
+  </ul>
+  <ul>
+    Advantages
+    <li>
+      <p>
+        When a document fragment is appended to the DOM, it transfers from the document fragment to the place its appended. Its no
+        longer in memory in the place you created it. This is not true for element nodes that are temperately used to contained
+        nodes briefly and then are moved to the live DOM.
+      </p>
+    </li>
+    <li>
+      <p>
+        Note: Leaving a fragments containing nodes in memory by cloning using docFrag.cloneNode(true);
+      </p>
+    </li>
+  </ul>
+  <script type="text/javascript">
+    var docFrag = document.createDocumentFragment();
+
+    ["blue", "green", "red", "blue", "pink"].forEach(function (e) {
+      var li = document.createElement("li");
+      li.textContent = e;
+      docFrag.appendChild(li);
+    });
+
+    console.log(docFrag.textContent); //logs bluegreenredbluepink
+
+    var bodyElement = document.querySelector('body');
+    bodyElement.appendChild(docFrag);
+  </script>
+</body>
+
+</html>
