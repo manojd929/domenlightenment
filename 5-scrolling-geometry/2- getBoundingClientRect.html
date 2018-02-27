@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>getBoundingClientRect</title>
+  <style>
+    body {
+      margin: 0;
+    }
+
+    div {
+      height: 100px;
+      width: 250px;
+      border: 10px solid gray;
+      margin: 50px;
+    }
+  </style>
+</head>
+
+<body>
+  <div>
+    <b>This is relative to the viewport</b>
+  </div>
+  <div>
+    <b>Element size = border + padding + content</b>
+    <span>Using height and width properties</span>
+  </div>
+  <div>
+    <b>Element size = padding + content excluding border not using getBoundingClientRect</b>
+    <span>Using clientHeight and clientWidth properties</span>
+  </div>
+
+  <script type="text/javascript">
+    var divElement = document.querySelector('div').getBoundingClientRect();
+    console.log('T R B L', divElement.top, divElement.right, divElement.bottom, divElement.left);
+    console.log('Height and width ', divElement.height, divElement.width);
+    var div = document.querySelector('div');
+    console.log('clientHeight and clientWidth ', div.clientHeight, div.clientWidth);
+  </script>
+</body>
+
+</html>

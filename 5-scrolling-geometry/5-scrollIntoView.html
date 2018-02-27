@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>scrollIntoView</title>
+  <style>
+    div {
+      height: 300px;
+      width: 300px;
+      overflow: auto;
+    }
+
+    p {
+      background-color: grey;
+    }
+
+    .pscroll {
+      background-color: red;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div>
+    <content>
+      <p>1</p>
+      <p>2</p>
+      <p>3</p>
+      <p>4</p>
+      <p class='pscroll'>5</p>
+      <p>6</p>
+      <p>7</p>
+      <p>8</p>
+      <p>9</p>
+      <p>10</p>
+    </content>
+  </div>
+
+  document.querySelector('content').children[4].scrollIntoView(true);
+
+  <script>
+
+    //select <p>5</p> and scroll that element into view, I pass children '4' because its a zero index array-like structure
+    document.querySelector('content').children[4].scrollIntoView(true);
+
+  </script>
+</body>
+
+</html>

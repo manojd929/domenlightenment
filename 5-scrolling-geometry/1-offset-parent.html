@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>offset parent</title>
+  <style>
+    body {
+      margin: 0;
+    }
+
+    #blue {
+      height: 100px;
+      width: 100px;
+      background-color: blue;
+      border: 10px solid gray;
+      padding: 25px;
+      margin: 25px;
+    }
+
+    #red {
+      height: 50px;
+      width: 50px;
+      background-color: red;
+      border: 10px solid gray;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="blue">
+    <div id="red"></div>
+  </div>
+  <ul>
+    <li>
+      DOM nodes are parsed and painted into visual shapes in web browser
+    </li>
+    <li>
+      Set of APIs exist to manipulate this visual represention
+    </li>
+    <li>
+      These are specified in CSSOM view module
+    </li>
+  </ul>
+
+  <p>
+    Here red div's offset parent is body as it's parent blue position is static. If during the ancestral search a td, th, or
+    table element with a CSS position value of static is found then this becomes the value of offsetParent.
+  </p>
+  <script type="text/javascript">
+    var div = document.querySelector('#red');
+
+    console.log('red div.offsetLeft ', div.offsetLeft);
+    console.log('red div.offsetTop ', div.offsetTop);
+    console.log('red div.offsetParent ', div.offsetParent);
+  </script>
+</body>
+
+</html>

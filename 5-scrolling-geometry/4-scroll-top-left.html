@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Scroll top left</title>
+  <style>
+    div {
+      height: 100px;
+      width: 100px;
+      overflow: auto;
+    }
+
+    p {
+      height: 1000px;
+      width: 1000px;
+      background-color: red;
+    }
+  </style>
+</head>
+
+<body>
+  <div>
+    <p></p>
+  </div>
+  <ul>
+    <li>
+      Programmatically scrolling using scrollTop and scrollLeft of div
+    </li>
+  </ul>
+  <script type="text/javascript">
+    var div = document.querySelector('div');
+
+    div.scrollTop = 750;
+    div.scrollLeft = 750;
+
+    console.log('div.scrollTop, div.scrollLeft ', div.scrollTop, div.scrollLeft);
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>scroll height width</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    div {
+      height: 100px;
+      width: 100px;
+      overflow: auto;
+    }
+
+    p {
+      height: 1000px;
+      width: 1000px;
+      background-color: red;
+    }
+  </style>
+</head>
+
+<body>
+  <div>
+    <p>
+
+    </p>
+  </div>
+  <ul>
+    <li>
+      Here div is 100*100
+    </li>
+    <li>
+      p is 1000*1000
+    </li>
+    <li>
+      div's overflow is set to auto
+    </li>
+  </ul>
+  <script type="text/javascript">
+    var div = document.querySelector('div');
+    console.log('div scrollHeight and scrollWidth', div.scrollHeight, div.scrollWidth);
+  </script>
+</body>
+
+</html>
