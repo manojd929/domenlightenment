@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>style attribute</title>
+</head>
+
+<body>
+  <ul>
+    <li>
+      Every HTML element has a style attribute that can be used to inline CSS properties specific to the element
+    </li>
+    <li>
+      Style property returns a
+      <i>CSSStyleDeclaration</i> object and not a string
+      <ul>
+        <li>
+          getAttribute();
+        </li>
+        <li>
+          setAttribute();
+        </li>
+        <li>
+          removeAttribute();
+        </li>
+      </ul>
+    </li>
+    <li>
+      Only inline styles are included here, not thee computed ones
+    </li>
+  </ul>
+  <div style="background-color:red;border:1px solid black;height:100px;width:100px;"></div>
+  <script type="text/javascript">
+    var divStyle = document.querySelector('div').style;
+
+    //logs CSSStyleDeclaration {0="background-color", ...}
+    console.log(divStyle);
+    console.log('divStyle.cssText ', divStyle.cssText);
+  </script>
+</body>
+
+</html>
